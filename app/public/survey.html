@@ -2,26 +2,46 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1>Survey Questions</h1>
-            <h3>About you:</h3>
-                <h4>Name (required):</h4>
-                    <input type="text" id="name" required>
-                <h4>Link to photo image (required)</h4>
-                    <input type="text" id="photo" required>
-                <h4>Question 1:</h4>
+    <div class="container">
+        <br>
+        <header>
+            <div class="jumbotron rounded bg-info text-white">
+                <h1>Friend Finder</h1>
+                <hr class="my-2">
+                <h3>Compatibility Survey</h3>
+            </div>
+        </header>
+        <main>
+            <form role="form">
+                <h2>About you:</h2>
+                    <br>
+                    <h4>Name (required):</h4>
+                        <input type="text" id="name" placeholder="Name" required>
+                    <br>
+                    <br>
+                    <h4>Link to photo image (required):</h4>
+                        <input type="text" id="photo" placeholder="URL for photo" required>
+                    <br>
+                    <br>
+                    <h4><i>Question 1:</i></h4>
                     <h5>You like to be the life of the party.</h5>
                         <select id="q1">
                             <option value=""></option>
@@ -31,7 +51,9 @@
                             <option value="4">4</option>
                             <option value="5">5: Strongly Agree</option>
                         </select>
-                <h4>Question 2:</h4>
+                        <br>
+                        <br>
+                    <h4><i>Question 2:</i></h4>
                     <h5>You would rather be extremely smart than extremely attractive.</h5>
                         <select id="q2">
                             <option value=""></option>
@@ -41,7 +63,9 @@
                             <option value="4">4</option>
                             <option value="5">5: Strongly Agree</option>
                         </select>
-                <h4>Question 3:</h4>
+                        <br>
+                        <br>
+                    <h4><i>Question 3:</i></h4>
                     <h5>You are a very clean person.</h5>
                         <select id="q3">
                             <option value=""></option>
@@ -51,7 +75,9 @@
                             <option value="4">4</option>
                             <option value="5">5: Strongly Agree</option>
                         </select>
-                <h4>Question 4:</h4>
+                        <br>
+                        <br>
+                    <h4><i>Question 4:</i></h4>
                     <h5>You are always happy and upbeat.</h5>
                         <select id="q4">
                             <option value=""></option>
@@ -61,7 +87,9 @@
                             <option value="4">4</option>
                             <option value="5">5: Strongly Agree</option>
                         </select>
-                <h4>Question 5:</h4>
+                        <br>
+                        <br>
+                    <h4><i>Question 5:</i></h4>
                     <h5>You love sports.</h5>
                         <select id="q5">
                             <option value=""></option>
@@ -71,7 +99,9 @@
                             <option value="4">4</option>
                             <option value="5">5: Strongly Agree</option>
                         </select>
-                <h4>Question 6:</h4>
+                        <br>
+                        <br>
+                    <h4><i>Question 6:</i></h4>
                     <h5>You love surprises.</h5>
                         <select id="q6">
                             <option value=""></option>
@@ -81,7 +111,9 @@
                             <option value="4">4</option>
                             <option value="5">5: Strongly Agree</option>
                         </select>
-                <h4>Question 7:</h4>
+                        <br>
+                        <br>
+                    <h4><i>Question 7:</i></h4>
                     <h5>Your appearance is extremely important to you.</h5>
                         <select id="q7">
                             <option value=""></option>
@@ -91,7 +123,9 @@
                             <option value="4">4</option>
                             <option value="5">5: Strongly Agree</option>
                         </select>
-                <h4>Question 8:</h4>
+                        <br>
+                        <br>
+                    <h4><i>Question 8:</i></h4>
                     <h5>You love animals.</h5>
                         <select id="q8">
                             <option value=""></option>
@@ -101,8 +135,18 @@
                             <option value="4">4</option>
                             <option value="5">5: Strongly Agree</option>
                         </select>
+                        <br>
+                        <br>
+                    <button type="submit" class="btn btn-secondary text-white submit">Submit</button>
+                    <br>
+                    <br>
+            </form>
+        </main>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+    
+    </script>
+</body>
 
-        
-        <script src="" async defer></script>
-    </body>
 </html>

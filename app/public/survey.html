@@ -14,6 +14,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -152,7 +156,52 @@
     </div>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
-    
+
+    $(".submit").on("click", function(event) {
+    event.preventDefault();
+
+    // Here we grab the form elements
+    var newFriend = {
+      name: $("#name").val().trim(),
+      photo: $("#photo").val().trim(),
+      q1: $("#q1").val(),
+      q2: $("#q2").val(),
+      q4: $("#q4").val(),
+      q4: $("#q4").val(),
+      q5: $("#q5").val(),
+      q6: $("#q6").val(),
+      q7: $("#q7").val(),
+      q8: $("#q8").val(),
+    };
+
+    console.log(newFriend);
+
+    // This line is the magic. It"s very similar to the standard ajax function we used.
+    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+    // depending on if a tables is available or not.
+
+    $.post("/api/friends", newFriend,
+      function(data) {
+
+        // If a table is available... tell user they are booked.
+        if (data) {
+          swal("Survey submitted!", "success");
+        }
+
+        // Clear the form when submitting
+        $("#q1").val(""),
+        $("#q2").val(""),
+        $("#q4").val(""),
+        $("#q4").val(""),
+        $("#q5").val(""),
+        $("#q6").val(""),
+        $("#q7").val(""),
+        $("#q8").val("")
+
+      });
+
+  });
     </script>
 </body>
 

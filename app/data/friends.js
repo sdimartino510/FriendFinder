@@ -26,7 +26,7 @@ var friends = [
     },
     {
         name: "Chandler",
-        photo: "ghttps://upload.wikimedia.org/wikipedia/en/6/6c/Matthew_Perry_as_Chandler_Bing.jpg",
+        photo: "https://upload.wikimedia.org/wikipedia/en/6/6c/Matthew_Perry_as_Chandler_Bing.jpg",
         scores: ["5", "4", "4", "4", "4", "1", "3", "2"]
     }
 ]

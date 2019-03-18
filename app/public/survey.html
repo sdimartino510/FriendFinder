@@ -207,6 +207,7 @@
         // Grab the result from the AJAX post so that the best match's name and photo are displayed.
         $("#match-name").text(data.name);
         $("#match-img").attr("src", data.photo);
+        console.log(data);
 
         // Show the modal with the best match
         
@@ -214,31 +215,23 @@
         
 
         });
-    //     } else {
-    //     alert("Please fill out all fields before submitting!");
-    //     }
-    // });
-
-    // $.post("/api/friends", newFriend,
-    //   function(data) {
-
         
 
     //     if (data) {
     //       swal("Survey submitted!", "success");
     //     }
 
-    //     // Clear the form when submitting
-    //     $("#q1").val(""),
-    //     $("#q2").val(""),
-    //     $("#q4").val(""),
-    //     $("#q4").val(""),
-    //     $("#q5").val(""),
-    //     $("#q6").val(""),
-    //     $("#q7").val(""),
-    //     $("#q8").val("")
-
-    //   });
+        // Clear the form when submitting
+        $("#name").val(""),
+        $("#photo").val(""),
+        $("#q1").val(""),
+        $("#q2").val(""),
+        $("#q4").val(""),
+        $("#q4").val(""),
+        $("#q5").val(""),
+        $("#q6").val(""),
+        $("#q7").val(""),
+        $("#q8").val("")
 
   });
     </script>

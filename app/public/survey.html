@@ -16,9 +16,8 @@
         src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -173,14 +172,14 @@
             </p>
         </footer>
     </div>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
     <script type="text/javascript">
 
     $(".submit").on("click", function(event) {
     event.preventDefault();
 
         // Here we grab the form elements
-        var newFriend = {
+        var userData = {
         name: $("#name").val().trim(),
         photo: $("#photo").val().trim(),
         scores: [
@@ -195,23 +194,23 @@
         ]
     };
 
-    console.log(newFriend);
+    console.log(userData);
 
     // This line is the magic. It"s very similar to the standard ajax function we used.
     // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
     // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
     // depending on if a tables is available or not.
 
-    $.post("/api/friends", newFriend, function(data) {
+    $.post("/api/friends", userData, function(data) {
 
         // Grab the result from the AJAX post so that the best match's name and photo are displayed.
         $("#match-name").text(data.name);
         $("#match-img").attr("src", data.photo);
-        console.log(data);
+        console.log('we got the data', data);
 
         // Show the modal with the best match
         
-        $("#results-modal").modal("toggle");
+        $("#results-modal").modal("show");
         
     });
         
